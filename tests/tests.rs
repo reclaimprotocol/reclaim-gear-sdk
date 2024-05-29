@@ -18,7 +18,7 @@ fn proof_full_cycle() {
 
     let mut witness = Vec::new();
     let wit = Witness {
-        address: "0x244897572368eadf65bfbc5aec98d8e5443a9072".to_string(),
+        address: "244897572368eadf65bfbc5aec98d8e5443a9072".to_string(),
         host: "http".to_string(),
     };
     witness.push(wit);
@@ -30,6 +30,7 @@ fn proof_full_cycle() {
             minimum_witness: 1,
         },
     );
+
     assert!(!result.main_failed());
 
     let claim_info = ClaimInfo {
@@ -39,14 +40,14 @@ fn proof_full_cycle() {
         };
 
     let complete_claim_data = CompleteClaimData {
-        identifier: "0x531322a6c34e5a71296a5ee07af13f0c27b5b1e50616f816374aff6064daaf55"
+        identifier: "531322a6c34e5a71296a5ee07af13f0c27b5b1e50616f816374aff6064daaf55"
             .to_string(),
-        owner: "0xe4c20c9f558160ec08106de300326f7e9c73fb7f".to_string(),
+        owner: "e4c20c9f558160ec08106de300326f7e9c73fb7f".to_string(),
         epoch: 1,
         timestampS: 1710157447,
     };
 
-    let sig = "0x52e2a591f51351c1883559f8b6c6264b9cb5984d0b7ccc805078571242166b357994460a1bf8f9903c4130f67d358d7d6e9a52df9a38c51db6a10574b946884c1b".to_string();
+    let sig = "52e2a591f51351c1883559f8b6c6264b9cb5984d0b7ccc805078571242166b357994460a1bf8f9903c4130f67d358d7d6e9a52df9a38c51db6a10574b946884c1b".to_string();
     let mut sigs = Vec::new();
     sigs.push(sig);
 
@@ -61,13 +62,9 @@ fn proof_full_cycle() {
     };
 
     result = program.send(0, ReAction::VerifyProof(proof));
+    println!("{:?}",&result.log());
 
     assert!(!result.main_failed());
-    // result = program.send(2, PingPong::Pong);
-
-    // assert!(!result.main_failed());
-
-    // Querying the state using the `pingers` metafunction
 }
 
 #[tokio::test]

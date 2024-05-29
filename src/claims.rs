@@ -53,7 +53,7 @@ pub struct CompleteClaimData {
 impl CompleteClaimData {
     pub fn serialise(&self) -> String {
         format!(
-            "{}\n{}\n{}\n{}",
+            "0x{}\n0x{}\n{}\n{}",
             &self.identifier,
             &self.owner.to_string(),
             &self.timestampS.to_string(),
@@ -84,8 +84,8 @@ impl SignedClaim {
 
         // For each signature in the claim
         for mut complete_signature in self.signatures {
-            complete_signature.remove(0);
-            complete_signature.remove(0);
+            // complete_signature.remove(0);
+            // complete_signature.remove(0);
             let rec_param = complete_signature
                 .get((complete_signature.len() as usize - 2)..(complete_signature.len() as usize))
                 .unwrap();

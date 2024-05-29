@@ -12,7 +12,7 @@ impl Witness {
     pub fn get_addresses(witness: Vec<Witness>) -> Vec<String> {
         let mut vec_addresses = vec![];
         for wit in witness {
-            vec_addresses.push(wit.address);
+            vec_addresses.push(format!("0x{}",wit.address));
         }
         vec_addresses
     }

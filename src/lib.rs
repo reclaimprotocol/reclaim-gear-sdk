@@ -70,7 +70,7 @@ impl Reclaim {
             Some(epoch) => {
                 // Hash the claims, and verify with identifier hash
                 let hashed = proof.claimInfo.hash();
-                assert!(proof.signedClaim.claim.identifier == hashed);
+                assert!(format!("0x{}",proof.signedClaim.claim.identifier) == hashed);
                 // Fetch witness for claim
                 let expected_witness = fetch_witness_for_claim(
                     epoch.clone(),
