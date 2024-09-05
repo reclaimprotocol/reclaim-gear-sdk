@@ -2,6 +2,11 @@
   "name": "dapp",
   "version": "0.2.2",
   "private": true,
+  "license": "See License in <https://github.com/reclaimprotocol/.github/blob/main/LICENSE>",
+  "bugs": {
+    "url": "https://github.com/reclaimprotocol/reclaim-gear-sdk/issues"
+  },
+  "homepage": "https://github.com/reclaimprotocol/reclaim-gear-sdk/",
   "dependencies": {
     "@gear-js/api": "0.35.1",
     "@gear-js/react-hooks": "0.9.0",
